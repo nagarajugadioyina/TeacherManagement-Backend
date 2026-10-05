@@ -30,7 +30,7 @@ public class TeacherController {
 		return service.getAllTeacher();
 	}
 	//getById
-	@GetMapping("{id}")
+	@GetMapping("/{id}")
 	public Teacher getById(@PathVariable Long id) {
 		return service.getTeacherById(id);
 	}
@@ -40,18 +40,18 @@ public class TeacherController {
 		return service.addTeacher(tea);
 	}
 	//delete
-	@DeleteMapping("{id}")
+	@DeleteMapping("/{id}")
 	public void deleteById(@PathVariable Long id) {
 		service.deleteById(id);
 	}
 	//put
-	@PutMapping("{id}")
+	@PutMapping("/{id}")
 	public Teacher putTeacher(@PathVariable Long id,@RequestBody Teacher tea) {
 		return service.updateTeacher(id, tea);
 	}
 	//patch
 	// PATCH
-	@PatchMapping("{id}")
+	@PatchMapping("/{id}")
 	public Teacher patchTeacher(@PathVariable Long id, @RequestBody Teacher tea) {
 	    return service.patchTeacher(id, tea);
 	}
